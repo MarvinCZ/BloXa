@@ -20,8 +20,11 @@ public class ItemMinerTicket extends Item {
 
     @Override
     public synchronized ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-        if (!worldIn.isRemote && !playerIn.isCreative()) {
-            System.out.println(playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem));
+        if (!worldIn.isRemote) {
+            if (!playerIn.isCreative()) {
+                playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
+            }
+
             EntityMiner miner = new EntityMiner(worldIn);
             miner.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
             worldIn.spawnEntity(miner);
