@@ -1,5 +1,6 @@
 package cz.youngdevelopers.bloxa.EventHandlers;
 
+import cz.youngdevelopers.bloxa.block.BlockAOutput;
 import cz.youngdevelopers.bloxa.block.ModBlocks;
 import cz.youngdevelopers.bloxa.item.ModItems;
 import cz.youngdevelopers.bloxa.util.Reference;
@@ -18,13 +19,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class RegistryEventHandler {
+
+    @SubscribeEvent
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        event.getRegistry().register(new BlockAOutput());
+    }
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(ModItems.ITEMS);
-        for (Block block : ModBlocks.BLOCKS) {
-            event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-        }
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockAOutput).setRegistryName(ModBlocks.blockAOutput.getRegistryName()));
     }
+
 
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
@@ -32,5 +38,7 @@ public class RegistryEventHandler {
         for (Item item : ModItems.ITEMS) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
+        ModBlocks.initModels();
+        ModItems.initModels();
     }
 }

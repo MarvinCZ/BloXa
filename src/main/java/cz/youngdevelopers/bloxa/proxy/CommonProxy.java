@@ -4,6 +4,7 @@ import cz.youngdevelopers.bloxa.EventHandlers.LivingDeathEventHandler;
 import cz.youngdevelopers.bloxa.EventHandlers.RegistryEventHandler;
 import cz.youngdevelopers.bloxa.EventHandlers.ServerTickEventHandler;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

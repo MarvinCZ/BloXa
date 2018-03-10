@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "bloxa:a_output"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}
