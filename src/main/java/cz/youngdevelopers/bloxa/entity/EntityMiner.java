@@ -20,7 +20,9 @@ public class EntityMiner extends EntityAnimal {
     }
 
     @Override
-    protected void initEntityAI() {}
+    protected void initEntityAI() {
+        this.setNoAI(true);
+    }
 
     @Override
     protected void applyEntityAttributes() {

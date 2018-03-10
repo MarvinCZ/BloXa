@@ -13,6 +13,6 @@ public class EntityInit {
     }
 
     private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
-         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID + ":" + name), entity, name, id, Main.instance, range, 1, true, color1, color2);
+         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID + ":" + name), entity, "Miner", id, Main.instance, range, 1, true, color1, color2);
     }
 }
