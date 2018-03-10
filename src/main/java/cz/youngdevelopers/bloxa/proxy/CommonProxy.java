@@ -1,6 +1,7 @@
 package cz.youngdevelopers.bloxa.proxy;
 
 import cz.youngdevelopers.bloxa.EventHandlers.LivingDeathEventHandler;
+import cz.youngdevelopers.bloxa.EventHandlers.RegistryEventHandler;
 import cz.youngdevelopers.bloxa.EventHandlers.ServerTickEventHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -12,6 +13,7 @@ public class CommonProxy {
     public void onPreInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ServerTickEventHandler.class);
         MinecraftForge.EVENT_BUS.register(LivingDeathEventHandler.class);
+        MinecraftForge.EVENT_BUS.register(RegistryEventHandler.class);
     }
 
     public void onInit(FMLInitializationEvent event) {
