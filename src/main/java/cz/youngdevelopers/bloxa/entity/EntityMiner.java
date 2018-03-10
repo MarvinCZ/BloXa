@@ -50,7 +50,7 @@ public class EntityMiner extends EntityFlying {
 
     public void tick() {
         if (!this.isEntityAlive()) {
-            MinerManager.getInstance().removeMiner(this);
+//            MinerManager.getInstance().removeMiner(this);
             return;
         }
         if (start == null) {
@@ -136,4 +136,10 @@ public class EntityMiner extends EntityFlying {
 
         start = this.getPositionVector();
     }
+
+    @Override
+    public boolean canBePushed() {
+        return true;
+    }
+
 }

@@ -19,7 +19,7 @@ public class ItemMinerTicket extends Item {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+    public synchronized ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         if (!worldIn.isRemote && !playerIn.isCreative()) {
             System.out.println(playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem));
             EntityMiner miner = new EntityMiner(worldIn);

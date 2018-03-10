@@ -21,34 +21,34 @@ public class MinerManager {
         return instance;
     }
 
-    public void addMiner(EntityMiner miner)
+    public synchronized void addMiner(EntityMiner miner)
     {
         miners.add(miner);
         System.out.println("Minner Added");
     }
 
-    public void setMine(int dir, int count, int mine)
+    public synchronized void setMine(int dir, int count, int mine)
     {
         for (EntityMiner m : miners) {
             m.mine(dir, count, mine);
         }
     }
 
-    public void stop()
+    public synchronized void stop()
     {
         for (EntityMiner m : miners) {
             m.count = 0;
         }
     }
 
-    public void tick()
+    public synchronized void tick()
     {
         for (EntityMiner m : miners) {
             m.tick();
         }
     }
 
-    public void removeMiner(EntityMiner entity) {
+    public synchronized void removeMiner(EntityMiner entity) {
         miners.remove(entity);
     }
 }
