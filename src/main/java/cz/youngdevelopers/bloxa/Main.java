@@ -1,8 +1,10 @@
 package cz.youngdevelopers.bloxa;
 
+import cz.youngdevelopers.bloxa.EventHandlers.ServerTickEventHandler;
 import cz.youngdevelopers.bloxa.proxy.CommonProxy;
 import cz.youngdevelopers.bloxa.util.Reference;
 import cz.youngdevelopers.bloxa.util.RegistryHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -24,6 +26,7 @@ public class Main {
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
         RegistryHandler.preInitRegistries();
+        MinecraftForge.EVENT_BUS.register(ServerTickEventHandler.class);
     }
 
     @Mod.EventHandler
