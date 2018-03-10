@@ -7,6 +7,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 public class ServerTickEventHandler {
     @SubscribeEvent
     public static void serverTick(TickEvent.ServerTickEvent event) {
-        QueueWorker.getInstance().work();
+        if (event.side.isServer()) {
+            QueueWorker.getInstance().work();
+        }
     }
 }
