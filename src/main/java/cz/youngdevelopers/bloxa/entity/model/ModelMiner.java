@@ -8,12 +8,13 @@ public class ModelMiner extends ModelBase {
     private ModelRenderer box1;
 
     public ModelMiner() {
-        textureHeight = 32;
-        textureWidth = 32;
+        textureHeight = 28;
+        textureWidth  = 56;
 
         box1 = new ModelRenderer(this, 0, 0);
         box1.addBox(-7f, 9f, -7f, 14, 14, 14);
-        box1.setTextureSize(16, 16);
+        box1.setTextureOffset(0, 0);
+        box1.setTextureSize(textureWidth, textureHeight);
     }
 
     @Override
