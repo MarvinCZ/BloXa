@@ -24,7 +24,7 @@ public class MinerManager {
     public synchronized void addMiner(EntityMiner miner)
     {
         miners.add(miner);
-        System.out.println("Minner Added");
+        System.out.println("Miner Added");
     }
 
     public synchronized void setMine(int dir, int count, int mine)

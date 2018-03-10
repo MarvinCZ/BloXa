@@ -2,13 +2,13 @@
 {
   "modid": "bloxa",
   "name": "BloXa",
-  "description": "",
+  "description": "Control your world using only your voice",
   "version": "0.0.1",
   "mcversion": "1.12",
   "url": "",
   "updateUrl": "",
-  "authorList": [""],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Marvin_CZ", "OneTime97"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
