@@ -5,6 +5,8 @@ import cz.youngdevelopers.bloxa.controller.MinerManager;
 import net.minecraft.server.MinecraftServer;
 import redis.clients.jedis.Jedis;
 
+import java.net.SocketTimeoutException;
+
 public class QueueWorker {
     private static QueueWorker instance = null;
 
@@ -12,7 +14,7 @@ public class QueueWorker {
 
     private QueueWorker()
     {
-        redis = new Jedis(ModConfig.redisEndpoint);
+        redis = new Jedis(ModConfig.redisEndpoint, ModConfig.redisPort);
     }
 
     public static QueueWorker getInstance()

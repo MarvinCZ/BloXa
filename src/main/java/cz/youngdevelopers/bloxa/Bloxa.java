@@ -8,10 +8,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Main.MODID, name = Main.NAME, version = Main.VERSION)
-public class Main {
+@Mod(modid = Bloxa.MODID, name = Bloxa.NAME, version = Bloxa.VERSION)
+public class Bloxa {
     @Mod.Instance
-    public static Main instance;
+    public static Bloxa instance;
 
     public static final String MODID = "bloxa";
     public static final String NAME = "BloXa";
