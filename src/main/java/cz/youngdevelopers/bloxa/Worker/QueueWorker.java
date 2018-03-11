@@ -32,10 +32,32 @@ public class QueueWorker {
         while (redis.llen("que") > 0) {
             String job = redis.rpop("que");
             String[] parts = job.split(" ");
-            if (parts[0].equals("miner")) {
-                int dir = Integer.parseInt(parts[1]);
-                int count = Integer.parseInt(parts[2]);
-                int mine = Integer.parseInt(parts[3]);
+            if (parts[0].equals("mine")) {
+                int dir = 3;
+                switch (parts[2]) {
+                    case "north":
+                        dir = 2;
+                        break;
+                    case "south":
+                        dir = 0;
+                        break;
+                    case "east":
+                        dir = 1;
+                        break;
+                    case "west":
+                        dir = 3;
+                        break;
+                }
+                int count = Integer.parseInt(parts[3]);
+                int mine = 0;
+                switch (parts[4]) {
+                    case "normal":
+                        mine = 1;
+                        break;
+                    case "wide":
+                        dir = 2;
+                        break;
+                }
                 MinerManager.getInstance().setMine(dir, count, mine);
             }
             if (parts[0].equals("stop")) {
