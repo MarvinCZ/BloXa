@@ -2,6 +2,7 @@ package cz.youngdevelopers.bloxa.EventHandlers;
 
 import cz.youngdevelopers.bloxa.block.BlockAOutput;
 import cz.youngdevelopers.bloxa.block.ModBlocks;
+import cz.youngdevelopers.bloxa.entity.AOutTileEntity;
 import cz.youngdevelopers.bloxa.item.ModItems;
 import cz.youngdevelopers.bloxa.util.Reference;
 import net.minecraft.block.Block;
@@ -14,6 +15,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -23,6 +25,7 @@ public class RegistryEventHandler {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockAOutput());
+        GameRegistry.registerTileEntity(AOutTileEntity.class, Reference.MODID + "_aout");
     }
 
     @SubscribeEvent

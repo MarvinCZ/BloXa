@@ -1,6 +1,7 @@
 package cz.youngdevelopers.bloxa.Worker;
 
 import cz.youngdevelopers.bloxa.ModConfig;
+import cz.youngdevelopers.bloxa.controller.BlockManager;
 import cz.youngdevelopers.bloxa.controller.MinerManager;
 import net.minecraft.server.MinecraftServer;
 import redis.clients.jedis.Jedis;
@@ -39,6 +40,12 @@ public class QueueWorker {
             }
             if (parts[0].equals("stop")) {
                 MinerManager.getInstance().stop();
+            }
+            if (parts[0].equals("blockon")) {
+                BlockManager.getInstance().setState(true);
+            }
+            if (parts[0].equals("blockoff")) {
+                BlockManager.getInstance().setState(false);
             }
             System.out.println(job);
         }
